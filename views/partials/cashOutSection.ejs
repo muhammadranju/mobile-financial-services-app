@@ -1,0 +1,69 @@
+<!-- Cash Out -->
+<section
+  class="bg-gray-200 py-5 mt-3 px-4 rounded-xl hidden"
+  id="cashOutSection"
+>
+  <div class="flex justify-between px-4 mb-2">
+    <h4 class="font-bold">Cash Out</h4>
+  </div>
+  <div class="card w-[340px] mx-auto rounded-2xl bg-base-100">
+    <form class="card-body">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Agent Number</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter 11 digit account number"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          required
+          id="cashOutAgentNumber"
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="cashOutAgentNumberError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Amount </span>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter amount to withdraw"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          required
+          id="cashOutWithdrawAmount"
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="cashOutWithdrawAmountError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Pin Number</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter 4 digit pin number"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          required
+          id="cashOutPinNumber"
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="cashOutPinNumberError"
+        ></span>
+      </div>
+      <div class="form-control mt-6">
+        <button
+          class="btn btn-primary rounded-full text-lg font-bold"
+          id="cashOutButton"
+        >
+          Withdraw Money
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

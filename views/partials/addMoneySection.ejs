@@ -1,0 +1,92 @@
+<!-- Add Money -->
+<section
+  class="bg-gray-200 py-3 mt-3 px-4 rounded-xl hidden"
+  id="addMoneySection"
+>
+  <div class="flex justify-between px-4 mb-2">
+    <h4 class="font-bold">Add Money</h4>
+  </div>
+  <div class="card w-[340px] mx-auto rounded-2xl bg-base-100">
+    <form class="card-body">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Select A Bank</span>
+        </label>
+        <select
+          id="addMoneyBank"
+          class="select select-bordered w-full max-w-xs rounded-full border-0 bg-base-200"
+        >
+          <option disabled selected>Select Bank</option>
+          <option>Islami Bank Bangladesh Limited</option>
+          <option>Dutch-Bangla Bank</option>
+          <option>Standard Chartered Bank</option>
+          <option>National Bank Limited</option>
+          <option>HSBC Bank</option>
+          <option>IFIC Bank Limited</option>
+          <option>BRAC Bank Limited</option>
+          <option>Eastern Bank Limited (EBL)</option>
+          <option>Sonali Bank Limited</option>
+          <option>Pubali Bank Limited (PBL)</option>
+        </select>
+        <span class="ml-4 font-semibold text-red-500" id="addMoneyBankError">
+        </span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Bank Account Number</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter 11 digit account number"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          id="addMoneyAccountNumber"
+          required
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="addMoneyAccountNumberError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Amount to Add</span>
+        </label>
+        <input
+          type="text"
+          placeholder="Add Amount to withdraw"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          id="addMoneyAmount"
+          required
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="addMoneyAmountError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Pin Number</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter 4 digit pin number"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          id="addMoneyPinNumber"
+          required
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="addMoneyPinNumberError"
+        ></span>
+      </div>
+      <div class="form-control mt-6">
+        <button
+          class="btn btn-primary rounded-full text-lg font-bold"
+          id="addMoneyButton"
+        >
+          Add Money
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

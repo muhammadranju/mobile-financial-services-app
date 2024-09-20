@@ -1,0 +1,41 @@
+{
+  "name": "mfs-app",
+  "version": "1.0.0",
+  "description": "This app is Practice purpose software financial app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadranju/mfs-app.git"
+  },
+  "keywords": [
+    "mfs",
+    "app",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "Md. Ranju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muhammadranju/mfs-app/issues"
+  },
+  "homepage": "https://github.com/muhammadranju/mfs-app#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.6.3",
+    "morgan": "^1.10.0"
+  }
+}

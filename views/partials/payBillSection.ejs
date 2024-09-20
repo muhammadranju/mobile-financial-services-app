@@ -1,0 +1,93 @@
+<!-- Pay Bill -->
+<section
+  class="bg-gray-200 py-3 mt-3 px-4 rounded-xl hidden"
+  id="payBillSection"
+>
+  <div class="flex justify-between px-4 mb-2">
+    <h4 class="font-bold">Pay Bill</h4>
+  </div>
+  <div class="card w-[340px] mx-auto rounded-2xl bg-base-100">
+    <form class="card-body">
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Select To Pay</span>
+        </label>
+        <select
+          class="select select-bordered w-full max-w-xs rounded-full border-0 bg-base-200"
+          id="payBillSelectToPay"
+        >
+          <option disabled selected hidden>Select to Pay</option>
+          <option>Electricity</option>
+          <option>Gas</option>
+          <option>Water</option>
+          <option>Internet</option>
+          <option>Telephone</option>
+          <option>TV</option>
+          <option>Credit Card</option>
+          <option>Tacker</option>
+          <option>Others</option>
+        </select>
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="payBillSelectToPayError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Bank Account Number</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter 11 digit account number"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          required
+          id="payBillBankAccountNumber"
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="payBillBankAccountNumberError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Amount to Add</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Add Amount to withdraw"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          required
+          id="payBillAmountToAdd"
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="payBillAmountToAddError"
+        ></span>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text font-semibold">Pin Number</span>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter 4 digit pin number"
+          class="input input-bordered border-0 rounded-full bg-base-200"
+          required
+          id="payBillPinNumber"
+        />
+        <span
+          class="ml-4 font-semibold text-red-500"
+          id="payBillPinNumberError"
+        ></span>
+      </div>
+      <div class="form-control mt-6">
+        <button
+          class="btn btn-primary rounded-full text-lg font-bold"
+          id="payBillBut"
+        >
+          Pay Now
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

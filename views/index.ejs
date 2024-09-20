@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <%- include("header/head.ejs") %>
+  <body>
+    <main class="container mx-auto flex justify-center mt-5 rounded-md">
+      <!-- <div class="artboard phone-5 border rounded-md"> -->
+      <div class="artboard phone-5">
+        <div class="mt-5">
+          <%- include("header/sections.ejs") %>
+          <!-- Latest Payment -->
+          <%- include("partials/latestPaymentSection.ejs") %>
+
+          <!-- Add Money -->
+          <%- include("partials/addMoneySection.ejs") %>
+
+          <!-- Cash Out -->
+          <%- include("partials/cashOutSection.ejs") %>
+
+          <!-- Transfer Money -->
+          <%- include("partials/transferMoneySection.ejs") %>
+
+          <!-- Send Now -->
+          <%- include("partials/getBonusSection.ejs") %>
+
+          <!-- Pay Bill -->
+          <%- include("partials/payBillSection.ejs") %>
+
+          <!-- Transaction History -->
+          <%- include("partials/transactionHistorySection.ejs") %>
+        </div>
+      </div>
+    </main>
+    <script src="./script/main.js"></script>
+  </body>
+</html>

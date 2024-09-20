@@ -1,0 +1,84 @@
+<!-- Available Balance -->
+<section class="flex flex-row justify-between gap-x-16 lg:px-0 px-4">
+  <div class="flex justify-center items-center space-x-1">
+    <img src="./image/logo.png" class="w-10 h-10" alt="" />
+    <div>
+      <h2 class="font-bold" id="userBalance"><%= user?.balance %></h2>
+      <span class="text">Available Balance</span>
+    </div>
+  </div>
+  <div>
+    <button
+      class="flex flex-row justify-center items-center p-2 px-3 border-[1px] rounded-xl"
+    >
+      <i class="fa-solid fa-right-to-bracket rotate-180 mr-2"></i>
+      <a href="/logout">Log Out</a>
+    </button>
+  </div>
+</section>
+
+<!-- divider -->
+<div class="divider"></div>
+<!-- divider -->
+
+<!-- Welcome to Payooo -->
+<section class="lg:px-0 px-4">
+  <h1 class="text-2xl font-bold">🔥Welcome to Payooo!</h1>
+  <p class="text-gray-500">
+    Enjoy easy and convenient financial services with us. Cashout charge is low
+    and
+  </p>
+</section>
+
+<!-- grid card section  -->
+<section class="grid grid-cols-3 gap-5 mt-5 lg:px-0 px-4">
+  <button
+    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
+    id="addMoneySectionBtn"
+  >
+    <img src="./image/icon-1.png" class="w-6" alt="" />
+    <span class="text-sm" id="addMoneySectionBtnText">Add Money</span>
+  </button>
+
+  <button
+    class="flex flex-col justify-center items-center border-[1px] rounded-md p-3"
+    id="cashOutSectionBtn"
+  >
+    <img src="./image/icon-2.png" class="w-6" alt="" />
+    <span class="text-sm" id="cashOutSectionBtnText">Cash Out</span>
+  </button>
+
+  <button
+    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
+    id="transferMoneySectionBtn"
+  >
+    <img src="./image/icon-3.png" class="w-6" alt="" />
+    <span class="text-sm" id="transferMoneySectionBtnText">Transfer Money</span>
+  </button>
+
+  <button
+    id="getBonusSectionBtn"
+    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
+  >
+    <img src="./image/icon-4.png" class="w-6" alt="" />
+    <span class="text-sm" id="getBonusSectionBtnText">Get Bonus</span>
+  </button>
+
+  <button
+    id="payBillSectionBtn"
+    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
+  >
+    <img src="./image/icon-5.png" class="w-6" alt="" />
+    <span class="text-sm" id="payBillSectionBtnText">Pay Bill</span>
+  </button>
+
+  <button
+    id="transactionHistorySectionBtn"
+    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
+  >
+    <img src="./image/icon-6.png" class="w-6" alt="" />
+    <span class="text-sm" id="transactionHistorySectionBtnText"
+      >Transactions</span
+    >
+  </button>
+</section>
