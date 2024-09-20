@@ -3,7 +3,7 @@
   <div class="flex justify-center items-center space-x-1">
     <img src="./image/logo.png" class="w-10 h-10" alt="" />
     <div>
-      <h2 class="font-bold" id="userBalance"><%= user?.balance %></h2>
+      <h2 class="font-bold" id="userBalance"><%= user?.balance ||"00"%></h2>
       <span class="text">Available Balance</span>
     </div>
   </div>
