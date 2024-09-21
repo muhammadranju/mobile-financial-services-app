@@ -41,12 +41,12 @@
         ><button class="join-item btn">«</button></a
       >
       <% } %>
-
       <button class="join-item btn">Page: <%= page %></button>
-
+      <% if (transactionHistory.length === limit) { %>
       <a href="/?page=<%= page + 1 %> %>">
         <button class="join-item btn">»</button></a
       >
+      <% } %>
     </div>
   </div>
 </section>
