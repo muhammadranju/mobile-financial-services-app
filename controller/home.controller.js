@@ -6,7 +6,7 @@ const homeController = {};
 homeController.index = async (req, res, next) => {
   try {
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 5;
+    const limit = parseInt(req.query.limit) || 4;
     const skip = (page - 1) * limit;
 
     const user = await User.findOne({ _id: req.user.userId }).populate({
@@ -32,16 +32,11 @@ homeController.index = async (req, res, next) => {
       { $unwind: "$transactionHistory" },
       { $count: "total" },
     ]);
-
-    const totalTransactionCount = totalTransactions.length
-      ? totalTransactions[0].total
-      : 0;
-    const totalPages = Math.ceil(totalTransactionCount / limit);
+    console.log(formattedTransactionHistory.length < limit);
 
     return res.status(200).render("index", {
       user,
       transactionHistory: formattedTransactionHistory,
-      totalPages,
       page,
       limit,
       title: "Home - Payooo",
