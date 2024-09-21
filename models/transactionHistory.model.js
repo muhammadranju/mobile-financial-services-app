@@ -22,7 +22,9 @@ const transactionHistorySchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
     },
-
+    transactionType: {
+      type: String,
+    },
     isActive: {
       type: String,
       default: true,

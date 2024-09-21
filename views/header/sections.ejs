@@ -9,9 +9,9 @@
   </div>
   <div>
     <button
-      class="flex flex-row justify-center items-center p-2 px-3 border-[1px] rounded-xl"
+      class="flex flex-row justify-center lg:text-base text-sm items-center p-2 px-3 border-[1px] rounded-xl lg:block"
     >
-      <i class="fa-solid fa-right-to-bracket rotate-180 mr-2"></i>
+      <i class="fa-solid fa-right-to-bracket rotate-180 mr-1"></i>
       <a href="/logout">Log Out</a>
     </button>
   </div>
@@ -33,11 +33,13 @@
 <!-- grid card section  -->
 <section class="grid grid-cols-3 gap-5 mt-5 lg:px-0 px-4">
   <button
-    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
+    class="flex flex-col justify-center items-center border-[1px] rounded-md py-3 lg:text-base text-sm"
     id="addMoneySectionBtn"
   >
     <img src="./image/icon-1.png" class="w-6" alt="" />
-    <span class="text-sm" id="addMoneySectionBtnText">Add Money</span>
+    <span class="lg:text-base text-sm" id="addMoneySectionBtnText"
+      >Cash In</span
+    >
   </button>
 
   <button
@@ -45,7 +47,9 @@
     id="cashOutSectionBtn"
   >
     <img src="./image/icon-2.png" class="w-6" alt="" />
-    <span class="text-sm" id="cashOutSectionBtnText">Cash Out</span>
+    <span class="lg:text-base text-sm" id="cashOutSectionBtnText"
+      >Cash Out</span
+    >
   </button>
 
   <button
@@ -53,7 +57,13 @@
     id="transferMoneySectionBtn"
   >
     <img src="./image/icon-3.png" class="w-6" alt="" />
-    <span class="text-sm" id="transferMoneySectionBtnText">Transfer Money</span>
+    <span class="lg:text-base text-sm" id="transferMoneySectionBtnText"
+      >Send Money</span
+    >
+    <!-- <span
+      class="lg:text-base text-sm lg:block hidden"
+      id="transferMoneySectionBtnText"
+      >Transfer Money</span -->
   </button>
 
   <button
@@ -61,7 +71,9 @@
     class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
   >
     <img src="./image/icon-4.png" class="w-6" alt="" />
-    <span class="text-sm" id="getBonusSectionBtnText">Get Bonus</span>
+    <span class="lg:text-base text-sm" id="getBonusSectionBtnText"
+      >Get Bonus</span
+    >
   </button>
 
   <button
@@ -69,7 +81,9 @@
     class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
   >
     <img src="./image/icon-5.png" class="w-6" alt="" />
-    <span class="text-sm" id="payBillSectionBtnText">Pay Bill</span>
+    <span class="lg:text-base text-sm" id="payBillSectionBtnText"
+      >Pay Bill</span
+    >
   </button>
 
   <button
@@ -77,7 +91,7 @@
     class="flex flex-col justify-center items-center border-[1px] rounded-md py-3"
   >
     <img src="./image/icon-6.png" class="w-6" alt="" />
-    <span class="text-sm" id="transactionHistorySectionBtnText"
+    <span class="lg:text-base text-sm" id="transactionHistorySectionBtnText"
       >Transactions</span
     >
   </button>

@@ -23,6 +23,13 @@ addMoneyController.index = async (req, res, next) => {
         .json({ status: "failed", message: "User not found" });
     }
 
+    if (findUser.mobileNumber !== addMoneyAccountNumber.slice(1, 11)) {
+      return res.status(400).json({
+        status: "failed",
+        message: "Incorrect User Account Number",
+      });
+    }
+
     const isPasswordCorrect = await bcrypt.compare(
       addMoneyPinNumber,
       findUser.pinNumber
@@ -37,20 +44,26 @@ addMoneyController.index = async (req, res, next) => {
 
     const newTransaction = new TransactionHistory({
       userId: findUser._id,
-      transactionHistoryBank: addMoneyBank,
+      transactionHistoryBank: `${addMoneyBank} - Cash In`,
       transactionHistoryAccountNumber: addMoneyAccountNumber,
       transactionHistoryAmount: parseFloat(addMoneyAmount),
+      transactionType: `Add Money`,
       isActive: true,
     });
 
     findUser.balance += parseFloat(addMoneyAmount);
+    findUser.transactionHistory.push(newTransaction._id);
     // console.log(typeof findUser.balance);
     // console.log(typeof addMoneyAmount);
     await findUser.save();
 
     await newTransaction.save();
 
-    return res.json({ status: "success", balance: findUser.balance });
+    return res.status(200).json({
+      status: "success",
+      balance: findUser.balance,
+      successMsg: "Successfully Added",
+    });
   } catch (error) {
     next(error);
   }

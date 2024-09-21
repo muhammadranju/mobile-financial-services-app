@@ -13,9 +13,9 @@ const isLoginMiddleware = require("../middleware/isLogin.middleware");
 
 router.route("/").get(authMiddleware, homeController.index);
 
-router.route("/login").get(isLoginMiddleware, loginController.loginGet);
+router.route("/login").get(loginController.loginGet);
 router.route("/login").post(loginController.loginPost);
-router.route("/register").get(isLoginMiddleware, loginController.registerGet);
+router.route("/register").get(loginController.registerGet);
 router.route("/register").post(loginController.registerPost);
 
 router.route("/logout").get(authMiddleware, loginController.logout);

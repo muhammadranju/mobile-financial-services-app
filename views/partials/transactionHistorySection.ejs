@@ -3,26 +3,33 @@
   class="bg-gray-200 py-1 mt-3 px-4 rounded-xl hidden"
   id="transactionHistorySection"
 >
-  <div class="space-y-4 mt-5 p-3 rounded-md px-4">
+  <div class="space-y-4 mt-5 p-3 rounded-md">
     <div class="flex justify-between">
       <h4 class="font-bold">Transaction History</h4>
       <span class="text-sm">View All</span>
     </div>
-    <% transactionHistory.forEach((transaction) => { %>
-    <div class="bg-white flex justify-between items-center rounded-xl">
-      <div class="flex flex-row justify-center items-center gap-2 p-2">
-        <div class="p-2 rounded-full bg-gray-200">
-          <img src="./image/icon-1.png" class="w-7 h-7" alt="" />
+    <div class="space-y-3" id="transactionHistorySectionList">
+      <% transactionHistory.forEach((transaction) => { %>
+      <div class="bg-white flex justify-between items-center rounded-xl">
+        <div class="flex flex-row justify-center items-center gap-2 p-2">
+          <div class="p-2 rounded-full bg-gray-200">
+            <img src="./image/icon-1.png" class="w-7 h-7" alt="" />
+          </div>
+          <div>
+            <h4 class="font-semibold">
+              <%=transaction.transactionHistoryBank%>
+            </h4>
+            <p class="text-sm"><%= transaction.createdAt %></p>
+            <p class="text-sm">
+              +88 <%= transaction.transactionHistoryAccountNumber %>
+            </p>
+          </div>
         </div>
-        <div>
-          <h4 class="font-semibold"><%=transaction.transactionHistoryBank%></h4>
-          <p class="text-sm"><%= transaction.createdAt %></p>
+        <div class="cursor-pointer p-4">
+          <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
       </div>
-      <div class="cursor-pointer p-4">
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </div>
+      <% }) %>
     </div>
-    <% }) %>
   </div>
 </section>

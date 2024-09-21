@@ -4,7 +4,7 @@
   <body>
     <main class="container mx-auto flex justify-center mt-5">
       <div class="artboard phone-4 border rounded-md bg-base-200">
-        <div class="flex justify-center items-center flex-col mt-44">
+        <div class="flex justify-center items-center flex-col mt-24">
           <div class="mb-5">
             <img src="./image/logo.png" class="w-16" alt="App Logo" />
           </div>
@@ -76,6 +76,7 @@
       </dialog>
     </main>
     <script>
+      let currentLocation = window.location.href;
       document
         .getElementById("loginButton")
         .addEventListener("click", async function (e) {
@@ -112,7 +113,7 @@
             pinNumber,
           };
 
-          const response = await fetch("http://localhost:3030/register", {
+          const response = await fetch(`/register`, {
             method: "POST",
             body: JSON.stringify(sendData),
             headers: {

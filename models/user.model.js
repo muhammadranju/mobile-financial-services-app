@@ -19,6 +19,12 @@ const userSchema = new Schema(
       type: String,
       default: false,
     },
+    transactionHistory: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "transactionHistory",
+      },
+    ],
   },
   {
     timestamps: true,

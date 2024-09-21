@@ -1,6 +1,7 @@
 function _id(id) {
   return document.getElementById(id);
 }
+
 let balance = 0;
 function toggleSections(sectionToShow, buttonToHighlight) {
   const sections = [
@@ -99,7 +100,7 @@ function handleFormSubmission({
     }
 
     // Send POST request
-    const response = await fetch(`http://localhost:3030/${endpoint}`, {
+    const response = await fetch(`/${endpoint}`, {
       method: "POST",
       body: JSON.stringify(sendData),
       credentials: "include",
@@ -108,11 +109,53 @@ function handleFormSubmission({
       },
     });
 
+    let successMsg = [
+      "Successfully Added",
+      "Successfully Cashed Out",
+      "Successfully Transferred",
+      "Successfully Got Bonus",
+      "Successfully Paid Bill",
+    ];
+
     const data = await response.json();
-    console.log(data);
     balance = data.balance;
     // Handle response
-    alert(data.status === "success" ? successMessage : failureMessage);
+    console.log(data);
+    if (data.status === "success") {
+      if (data.successMsg === successMsg[0]) {
+        alert("Successfully Added");
+        let carnetBalance = parseFloat(_id("userBalance").innerText);
+        let addMoneyAmount = parseFloat(_id("addMoneyAmount").value);
+        carnetBalance = carnetBalance + addMoneyAmount;
+        _id("userBalance").innerText = carnetBalance;
+      } else if (data.successMsg === successMsg[1]) {
+        alert("Successfully Cashed Out");
+        let carnetBalance = parseFloat(_id("userBalance").innerText);
+        let cashOutAmount = parseFloat(_id("cashOutWithdrawAmount").value);
+        carnetBalance = carnetBalance - cashOutAmount;
+        _id("userBalance").innerText = carnetBalance;
+      } else if (data.successMsg === successMsg[2]) {
+        alert("Successfully Transferred");
+        let carnetBalance = parseFloat(_id("userBalance").innerText);
+        let transferAmount = parseFloat(_id("transferAmount").value);
+        carnetBalance = carnetBalance - transferAmount;
+        _id("userBalance").innerText = carnetBalance;
+      } else if (data.successMsg === successMsg[3]) {
+        alert("Successfully Got Bonus");
+        let carnetBalance = parseFloat(_id("userBalance").innerText);
+        let getBonusAmount = parseFloat(_id("getBonusCoupon").value);
+        carnetBalance = carnetBalance + getBonusAmount;
+        _id("userBalance").innerText = carnetBalance;
+      } else if (data.successMsg === successMsg[4]) {
+        alert("Successfully Paid Bill");
+        let carnetBalance = parseFloat(_id("userBalance").innerText);
+        let payBillAmount = parseFloat(_id("payBillAmountToAdd").value);
+        carnetBalance = carnetBalance - payBillAmount;
+        _id("userBalance").innerText = carnetBalance;
+      }
+    } else {
+      alert(data.message);
+    }
 
     // Clear input fields
     inputFields.forEach(({ field }) => {
@@ -229,21 +272,5 @@ function initializeForms() {
   formConfigs.forEach((config) => handleFormSubmission(config));
 }
 
-// initializeForms();
-
-function addMoneyButtonClick() {
-  _id("addMoneyButton").addEventListener("click", async function (e) {
-    e.preventDefault();
-    let carnetBalance = parseFloat(_id("userBalance").innerText);
-    let addMoneyAmount = parseFloat(_id("addMoneyAmount").value);
-    carnetBalance = carnetBalance + addMoneyAmount;
-
-    _id("userBalance").innerText = carnetBalance;
-  });
-}
-addMoneyButtonClick();
-
-// document.addEventListener("DOMContentLoaded", () => {
 allBtnSections();
 initializeForms();
-// });
