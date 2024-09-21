@@ -5,12 +5,16 @@ const homeController = {};
 
 homeController.index = async (req, res, next) => {
   try {
-    // Find the user and populate their transactionHistory with sorting and limiting
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 5;
+    const skip = (page - 1) * limit;
+
     const user = await User.findOne({ _id: req.user.userId }).populate({
       path: "transactionHistory",
       options: {
-        sort: { createdAt: -1 }, // Sort by 'createdAt' in descending order
-        limit: 5, // Limit to 5 transactions
+        sort: { createdAt: -1 },
+        limit: limit,
+        skip: skip,
       },
     });
 
@@ -22,9 +26,24 @@ homeController.index = async (req, res, next) => {
         updatedAt: format(transaction.updatedAt, "dd-MM-yyyy HH:mm:ss"), // Format updatedAt
       })
     );
+
+    const totalTransactions = await User.aggregate([
+      { $match: { _id: req.user.userId } },
+      { $unwind: "$transactionHistory" },
+      { $count: "total" },
+    ]);
+
+    const totalTransactionCount = totalTransactions.length
+      ? totalTransactions[0].total
+      : 0;
+    const totalPages = Math.ceil(totalTransactionCount / limit);
+
     return res.status(200).render("index", {
       user,
       transactionHistory: formattedTransactionHistory,
+      totalPages,
+      page,
+      limit,
       title: "Home - Payooo",
     });
   } catch (error) {

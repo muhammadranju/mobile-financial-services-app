@@ -3,7 +3,7 @@
   class="bg-gray-200 py-1 mt-3 px-4 rounded-xl"
   id="latestPaymentSection"
 >
-  <div class="space-y-4 mt-5 p-3 rounded-md">
+  <div class="space-y-4 mt-5 p-3 rounded-md flex flex-col justify-between">
     <div class="flex justify-between">
       <h4 class="font-bold">Latest Payment</h4>
       <span class="text-sm">View All</span>
@@ -16,11 +16,11 @@
             <img src="./image/icon-1.png" class="w-7 h-7" alt="" />
           </div>
           <div>
-            <h4 class="font-semibold">
+            <h4 class="font-semibold text-sm text-gray-800">
               <%=transaction.transactionHistoryBank%>
             </h4>
-            <p class="text-sm"><%= transaction.createdAt %></p>
-            <p class="text-sm">
+            <p class="text-sm text-gray-700"><%= transaction.createdAt %></p>
+            <p class="text-sm text-gray-600">
               +88 <%= transaction.transactionHistoryAccountNumber %>
             </p>
           </div>
@@ -29,50 +29,24 @@
           <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
       </div>
-      <% }) %>
+      <% }) %> <% if (transactionHistory.length === 0) { %>
+      <div class="flex justify-center items-center">
+        <h4 class="text-sm text-gray-600">Latest Payment History</h4>
+      </div>
+      <% } %>
     </div>
+    <div class="join flex justify-center items-center">
+      <% if (page > 1) { %>
+      <a href="/?page=<%= page - 1 %> %>"
+        ><button class="join-item btn">«</button></a
+      >
+      <% } %>
 
-    <!-- <div class="bg-white flex justify-between items-center rounded-xl">
-      <div class="flex flex-row justify-center items-center gap-2 p-2">
-        <div class="p-2 rounded-full bg-gray-200">
-          <img src="./image/icon-1.png" class="w-7 h-7" alt="" />
-        </div>
-        <div>
-          <h4 class="font-semibold">Bank Deposit</h4>
-          <p class="text-sm">Today 01:44 AM</p>
-        </div>
-      </div>
-      <div class="cursor-pointer p-4">
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </div>
+      <button class="join-item btn">Page: <%= page %></button>
+
+      <a href="/?page=<%= page + 1 %> %>">
+        <button class="join-item btn">»</button></a
+      >
     </div>
-    <div class="bg-white flex justify-between items-center rounded-xl">
-      <div class="flex flex-row justify-center items-center gap-2 p-2">
-        <div class="p-2 rounded-full bg-gray-200">
-          <img src="./image/icon-1.png" class="w-7 h-7" alt="" />
-        </div>
-        <div>
-          <h4 class="font-semibold">Mobile Recharge</h4>
-          <p class="text-sm">Today 01:44 AM</p>
-        </div>
-      </div>
-      <div class="cursor-pointer p-4">
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </div>
-    </div>
-    <div class="bg-white flex justify-between items-center rounded-xl">
-      <div class="flex flex-row justify-center items-center gap-2 p-2">
-        <div class="p-2 rounded-full bg-gray-200">
-          <img src="./image/icon-1.png" class="w-7 h-7" alt="" />
-        </div>
-        <div>
-          <h4 class="font-semibold">Gas Bill</h4>
-          <p class="text-sm">Today 01:44 AM</p>
-        </div>
-      </div>
-      <div class="cursor-pointer p-4">
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </div>
-    </div> -->
   </div>
 </section>
