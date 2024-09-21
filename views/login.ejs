@@ -4,7 +4,7 @@
   <body>
     <main class="container mx-auto flex justify-center mt-5">
       <div class="artboard phone-4 border rounded-md bg-base-200">
-        <div class="flex justify-center items-center flex-col mt-24">
+        <div class="flex justify-center items-center flex-col mt-36">
           <div class="mb-5">
             <img src="./image/logo.png" class="w-16" alt="App Logo" />
           </div>
@@ -50,13 +50,18 @@
                   Login
                 </button>
               </div>
-              <!-- <span>
+              <span>
                 You don't have an account?
                 <a href="/register" class="link link-primary">Register</a>
-              </span> -->
+              </span>
             </form>
           </div>
         </div>
+        <footer class="footer footer-center text-base-content p-4">
+          <aside>
+            <p>Copyright © <%=new Date().getFullYear() %> - Muhammad Ranju</p>
+          </aside>
+        </footer>
       </div>
       <dialog id="loginModel" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box">
@@ -73,6 +78,7 @@
         </div>
       </dialog>
     </main>
+
     <script>
       let currentLocation = window.location.href;
       document

@@ -7,7 +7,7 @@ const loginController = {};
 // Login Get
 loginController.loginGet = async (req, res, next) => {
   try {
-    res.render("login");
+    res.render("login", { title: "Login - Payooo" });
   } catch (error) {
     next(error);
   }
@@ -96,7 +96,7 @@ loginController.loginPost = async (req, res, next) => {
 // Register Get
 loginController.registerGet = async (req, res, next) => {
   try {
-    res.render("register");
+    res.render("register", { title: "Register - Payooo" });
   } catch (error) {
     next(error);
   }

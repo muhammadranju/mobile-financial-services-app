@@ -25,6 +25,7 @@ homeController.index = async (req, res, next) => {
     return res.status(200).render("index", {
       user,
       transactionHistory: formattedTransactionHistory,
+      title: "Home - Payooo",
     });
   } catch (error) {
     next(error);

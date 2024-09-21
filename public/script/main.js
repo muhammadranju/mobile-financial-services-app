@@ -128,30 +128,46 @@ function handleFormSubmission({
         let addMoneyAmount = parseFloat(_id("addMoneyAmount").value);
         carnetBalance = carnetBalance + addMoneyAmount;
         _id("userBalance").innerText = carnetBalance;
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else if (data.successMsg === successMsg[1]) {
         alert("Successfully Cashed Out");
         let carnetBalance = parseFloat(_id("userBalance").innerText);
         let cashOutAmount = parseFloat(_id("cashOutWithdrawAmount").value);
         carnetBalance = carnetBalance - cashOutAmount;
         _id("userBalance").innerText = carnetBalance;
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else if (data.successMsg === successMsg[2]) {
         alert("Successfully Transferred");
         let carnetBalance = parseFloat(_id("userBalance").innerText);
         let transferAmount = parseFloat(_id("transferAmount").value);
         carnetBalance = carnetBalance - transferAmount;
         _id("userBalance").innerText = carnetBalance;
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else if (data.successMsg === successMsg[3]) {
         alert("Successfully Got Bonus");
         let carnetBalance = parseFloat(_id("userBalance").innerText);
         let getBonusAmount = parseFloat(_id("getBonusCoupon").value);
         carnetBalance = carnetBalance + getBonusAmount;
         _id("userBalance").innerText = carnetBalance;
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else if (data.successMsg === successMsg[4]) {
         alert("Successfully Paid Bill");
         let carnetBalance = parseFloat(_id("userBalance").innerText);
         let payBillAmount = parseFloat(_id("payBillAmountToAdd").value);
         carnetBalance = carnetBalance - payBillAmount;
         _id("userBalance").innerText = carnetBalance;
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       }
     } else {
       alert(data.message);
