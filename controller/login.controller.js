@@ -147,7 +147,7 @@ loginController.registerPost = async (req, res, next) => {
       pinNumber: hashedPinNumber,
     });
 
-    // await newUser.save();
+    await newUser.save();
     res
       .status(201)
       .json({ status: "success", message: "Successfully created" });
