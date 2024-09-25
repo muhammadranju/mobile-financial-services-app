@@ -22,7 +22,7 @@ loginController.loginPost = async (req, res, next) => {
       .toString()
       .replace(/[^0-9]/g, ""); // Remove non-numeric characters
 
-    if (formattedMobileNumber.length !== 10) {
+    if (formattedMobileNumber.length !== 11) {
       return res.status(400).json({
         status: "failed",
         message: "Mobile number must be exactly 11 digits.",
