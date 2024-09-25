@@ -22,7 +22,7 @@ loginController.loginPost = async (req, res, next) => {
       .toString()
       .replace(/[^0-9]/g, ""); // Remove non-numeric characters
 
-    if (formattedMobileNumber.length !== 11) {
+    if (formattedMobileNumber.length !== 10) {
       return res.status(400).json({
         status: "failed",
         message: "Mobile number must be exactly 11 digits.",
@@ -108,6 +108,15 @@ loginController.registerPost = async (req, res, next) => {
     const { mobileNumber, pinNumber } = req.body;
 
     const findUser = await User.findOne({ mobileNumber });
+    const formattedMobileNumber = mobileNumber
+      .toString()
+      .replace(/[^0-9]/g, "");
+    if (formattedMobileNumber.length !== 10) {
+      return res.status(400).json({
+        status: "failed",
+        message: "Mobile number must be exactly 11 digits.",
+      });
+    }
 
     if (findUser) {
       res
@@ -138,7 +147,7 @@ loginController.registerPost = async (req, res, next) => {
       pinNumber: hashedPinNumber,
     });
 
-    await newUser.save();
+    // await newUser.save();
     res
       .status(201)
       .json({ status: "success", message: "Successfully created" });
